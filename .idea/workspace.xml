@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="04b874ec-27ea-4201-a878-4a7daef78a1a" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/venv/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/test001$1test004.coverage" NAME="1test004 Coverage Results" MODIFIED="1591272116281" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_jqxx_py.coverage" NAME="Unittests in csh_jqxx.py Coverage Results" MODIFIED="1590124062394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/csh_jcxxcase" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_ckxx_py.coverage" NAME="Unittests in csh_ckxx.py Coverage Results" MODIFIED="1589854518962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/datacase" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_zsspgl_py.coverage" NAME="Unittests in csh_zsspgl.py Coverage Results" MODIFIED="1590388226473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/csh_xsywcase" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_1test_xfgk1xfed1_py.coverage" NAME="Unittests in 1test_xfgk1xfed1.py Coverage Results" MODIFIED="1590495059807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+    <SUITE FILE_PATH="coverage/test001$ReadConfig__1_.coverage" NAME="ReadConfig (1) Coverage Results" MODIFIED="1589512060903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_zjlx_py.coverage" NAME="Unittests in csh_zjlx.py Coverage Results" MODIFIED="1589943727525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/datacase" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_spxxxhgg_py.coverage" NAME="Unittests in csh_spxxxhgg.py Coverage Results" MODIFIED="1589867841307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/datacase" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_1test_xfgk1xfgz1_py.coverage" NAME="Unittests in 1test_xfgk1xfgz1.py Coverage Results" MODIFIED="1590625645909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+    <SUITE FILE_PATH="coverage/test001$ReadConfig.coverage" NAME="ReadConfig Coverage Results" MODIFIED="1589800868162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/common" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_gysxx_py.coverage" NAME="Unittests in csh_gysxx.py Coverage Results" MODIFIED="1589959221959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/datacase" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_cydj_py.coverage" NAME="Unittests in csh_cydj.py Coverage Results" MODIFIED="1589854841120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/datacase" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_test_xfgk1cyed1_py.coverage" NAME="Unittests in test_xfgk1cyed1.py Coverage Results" MODIFIED="1590399960074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_test_xfgk1xfgz1_py.coverage" NAME="Unittests in test_xfgk1xfgz1.py Coverage Results" MODIFIED="1588759025653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_spxx_py.coverage" NAME="Unittests in csh_spxx.py Coverage Results" MODIFIED="1590386703871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/csh_jcxxcase" />
+    <SUITE FILE_PATH="coverage/test001$run.coverage" NAME="run Coverage Results" MODIFIED="1590404292735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001" />
+    <SUITE FILE_PATH="coverage/test001$1test003.coverage" NAME="1test003 Coverage Results" MODIFIED="1590468073166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+    <SUITE FILE_PATH="coverage/test001$send_email.coverage" NAME="send_email Coverage Results" MODIFIED="1590406615303" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_zjlx_py__1_.coverage" NAME="Unittests in csh_zjlx.py (1) Coverage Results" MODIFIED="1590061568845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/csh_jcxxcase" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="test001" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/test_xfgk1cyed1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="637">
+              <caret line="5439" column="21" lean-forward="true" selection-start-line="5439" selection-start-column="21" selection-end-line="5439" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lecent-new001/pages/basepage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lecent-new001/pages/xfgk1cyed1xfedpage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11685">
+              <caret line="618" column="63" selection-start-line="618" selection-start-column="63" selection-end-line="618" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/1test004.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="58" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+              <folding>
+                <element signature="e#1#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/1test001.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lecent-new001/test_case/test_xfgk1xfgz1.py" />
+        <option value="$PROJECT_DIR$/common/ReadConfig.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/common/ReadConfig.py" />
+        <option value="$PROJECT_DIR$/config/config.ini" />
+        <option value="$PROJECT_DIR$/lecent-new001/config/config.ini" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/ckxxpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/datacase/csh_ckxx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/datacase/csh_cydj.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/datacase/csh_jqxx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/spxx_xhggpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/datacase/csh_spxxxhgg.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/datacase/csh_zjlx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/spxxpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/datacase/csh_spxx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/gysxxpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/datacase/csh_gysxx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/zssgglpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/zsspglpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/csh_xsywcase/csh_zsspgl.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_ckxx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/zf_userpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/zjlxpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_zjlx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/test_case/test003.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/jqxxpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_jqxx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_spxx.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/utils/HTMLTestReportCN.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/test_case/1test003.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/xfgk1xfed1page.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/test_case/test_xfgk1cyed1.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/test_case/1test_xfgk1xfed1.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/xfgk1xfgz1page.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/test_case/1test_xfgk1xfgz1.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/pages/xfgk1cyed1xfedpage.py" />
+        <option value="$PROJECT_DIR$/lecent-new001/test_case/1test004.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="10" />
+    <option name="width" value="1621" />
+    <option name="height" value="1370" />
+  </component>
+  <component name="ProjectId" id="1Zyvlm9wp1rRLE2M42fcyttibyU" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="csh_jcxxcase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="csh_xsywcase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="test_case" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test001" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test001" type="462c0819:PsiDirectoryNode" />
+              <item name="lecent-new001" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.1test004">
+    <configuration name="1test003" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test001" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecent-new001/test_case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecent-new001/test_case/1test003.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="1test004" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test001" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecent-new001/test_case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecent-new001/test_case/1test004.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="send_email" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test001" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecent-new001" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecent-new001/send_email.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in 1test_xfgk1xfed1.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="test001" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecent-new001/test_case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/lecent-new001/test_case/1test_xfgk1xfed1.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in 1test_xfgk1xfgz1.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="test001" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecent-new001/test_case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/lecent-new001/test_case/1test_xfgk1xfgz1.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.1test004" />
+        <item itemvalue="Python tests.Unittests in 1test_xfgk1xfgz1.py" />
+        <item itemvalue="Python tests.Unittests in 1test_xfgk1xfed1.py" />
+        <item itemvalue="Python.1test003" />
+        <item itemvalue="Python.send_email" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04b874ec-27ea-4201-a878-4a7daef78a1a" name="Default Changelist" comment="" />
+      <created>1585824301783</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585824301783</updated>
+      <workItem from="1585824303252" duration="1323000" />
+      <workItem from="1586952093086" duration="385000" />
+      <workItem from="1587379491561" duration="2600000" />
+      <workItem from="1587429574160" duration="18365000" />
+      <workItem from="1587515307582" duration="5177000" />
+      <workItem from="1587601307466" duration="3560000" />
+      <workItem from="1587882373375" duration="2786000" />
+      <workItem from="1587952655761" duration="9808000" />
+      <workItem from="1588042351448" duration="7914000" />
+      <workItem from="1588730701872" duration="503000" />
+      <workItem from="1588731258009" duration="18000" />
+      <workItem from="1588731308225" duration="58000" />
+      <workItem from="1588731432038" duration="32000" />
+      <workItem from="1588732204555" duration="376000" />
+      <workItem from="1588733491027" duration="1220000" />
+      <workItem from="1588735805043" duration="173000" />
+      <workItem from="1588736497209" duration="1028000" />
+      <workItem from="1588754633947" duration="1838000" />
+      <workItem from="1589512006273" duration="765000" />
+      <workItem from="1589800666504" duration="6042000" />
+      <workItem from="1589853257878" duration="18870000" />
+      <workItem from="1589940419174" duration="5256000" />
+      <workItem from="1589945964637" duration="24119000" />
+      <workItem from="1590027537831" duration="44028000" />
+      <workItem from="1590371024677" duration="83864000" />
+      <workItem from="1591092977852" duration="23484000" />
+      <workItem from="1591269363193" duration="1285000" />
+      <workItem from="1591270672201" duration="2487000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.27 at 21h 49m 52s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.27 at 21h 52m 07s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.27 at 21h 56m 13s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.27 at 21h 58m 28s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.27 at 22h 01m 10s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.27 at 22h 05m 10s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.27 at 22h 23m 24s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.28 at 08h 22m 04s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.28 at 08h 25m 21s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_1test_xfgk1xfgz1_py - 2020.05.28 at 08h 30m 04s.xml">
+      <configuration name="Unittests in 1test_xfgk1xfgz1.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="214459000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49953228" visible="true" weight="0.15302067" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5004677" side_tool="true" weight="0.14586645" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22369447" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23616524" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49953228" visible="true" weight="0.14825119" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5004677" side_tool="true" weight="0.14586645" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34294623" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1340" height="224" key="GridCell.Tab.0.bottom" timestamp="1587605704798">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1340" height="224" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1587605704798" />
+    <state width="1340" height="224" key="GridCell.Tab.0.center" timestamp="1587605704798">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1340" height="224" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1587605704798" />
+    <state width="1340" height="224" key="GridCell.Tab.0.left" timestamp="1587605704798">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1340" height="224" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1587605704798" />
+    <state width="1340" height="224" key="GridCell.Tab.0.right" timestamp="1587605704798">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1340" height="224" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1587605704798" />
+    <state x="789" y="500" key="SettingsEditor" timestamp="1585824331308">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="789" y="500" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1585824331308" />
+    <state x="956" y="651" key="com.intellij.ide.util.TipDialog" timestamp="1588732206998">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="956" y="651" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588732206998" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lecent-new001/pages/zsspglpage.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_jqxx.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/test001$111.coverage" NAME="111 Coverage Results" MODIFIED="1587448919034" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_csh_spxx_py.coverage" NAME="Unittests in csh_spxx.py Coverage Results" MODIFIED="1587603649583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/datacase" />
+    <SUITE FILE_PATH="coverage/test001$cscs.coverage" NAME="cscs Coverage Results" MODIFIED="1585825470285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_test_xfgk1cyed1xfed_py.coverage" NAME="Unittests in test_xfgk1cyed1xfed.py Coverage Results" MODIFIED="1587516270604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+    <SUITE FILE_PATH="coverage/test001$Unittests_in_test_jcuser_py.coverage" NAME="Unittests in test_jcuser.py Coverage Results" MODIFIED="1585825520588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lecent-new001/test_case" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lecent-new001/config/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/111.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/test_xfgk1xfgz1.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/datacase/csh_ckxx.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/datacase/csh_cydj.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/datacase/csh_jqxx.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/datacase/csh_spxxxhgg.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/spxx_xhggpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/datacase/csh_zfuser.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/spxxpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/datacase/csh_spxx.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/datacase/csh_zjlx.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/gysxxpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/datacase/csh_gysxx.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/zssgglpage.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/test_xfgk1xfed1.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_spxxxhgg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_cydj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_gysxx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-210">
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_zjlx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="265" column="21" lean-forward="true" selection-start-line="265" selection-start-column="21" selection-end-line="265" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/zjlxpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="48" column="55" lean-forward="true" selection-start-line="48" selection-start-column="55" selection-end-line="48" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/test002.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/test001.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/test003.py" />
+    <entry file="file://$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_jqxx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="185" column="45" selection-start-line="185" selection-start-column="45" selection-end-line="185" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/jqxxpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_spxx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="507" column="21" selection-start-line="507" selection-start-column="21" selection-end-line="507" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/csh_xsywcase/csh_zsspgl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/utils/HTMLTestReportCN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="189" column="23" selection-start-line="189" selection-start-column="23" selection-end-line="189" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/send_email.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="84" lean-forward="true" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="72" lean-forward="true" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/zsspglpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="51" lean-forward="true" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/zf_userpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="47" lean-forward="true" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/1test002.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/jc_userpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/loginpage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/1test003.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="74" column="84" selection-start-line="74" selection-start-column="84" selection-end-line="74" selection-end-column="84" />
+          <folding>
+            <element signature="e#1#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/data/ckxx_data.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/csh_jcxxcase/csh_ckxx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/data/spxx_data.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/xfgk1xfgz1page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="16" column="72" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/1test_xfgk1xfgz1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="7170" column="21" lean-forward="true" selection-start-line="7170" selection-start-column="21" selection-end-line="7170" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/1test_xfgk1xfed1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="297" column="21" selection-start-line="297" selection-start-column="21" selection-end-line="297" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/xfgk1xfed1page.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="47" column="54" selection-start-line="47" selection-start-column="54" selection-end-line="47" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/ckxxpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/basepage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/pages/xfgk1cyed1xfedpage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11685">
+          <caret line="618" column="63" selection-start-line="618" selection-start-column="63" selection-end-line="618" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/test_xfgk1cyed1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="5439" column="21" lean-forward="true" selection-start-line="5439" selection-start-column="21" selection-end-line="5439" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/1test004.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="58" column="21" lean-forward="true" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+          <folding>
+            <element signature="e#1#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lecent-new001/test_case/1test001.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
