@@ -65,6 +65,7 @@ class TestCyed(unittest.TestCase):
         #self.cyed1.click_tkqr()
         self.b = self.cyed1.gett_tknr()
         print(self.b)
+        #目前的断言有点不得吃
         try:
             self.assertIn('购买失败', self.b)  # 断言，判断页面URL中是否包含emails
         except:
