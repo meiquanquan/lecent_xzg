@@ -181,7 +181,7 @@ class Cyed1xfedPage(BasePage):
     gyzxsjz = (By.XPATH, '//*[@id="GoodsOrderSaleForm_SubmitButton"]')
     qrjz = (By.XPATH, '//*[@id="Modal_SaleSettyle"]')
 
-    tkdw = (By.CSS_SELECTOR, 'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-content.layui-layer-padding')
+    tknr = (By.CSS_SELECTOR, 'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-content.layui-layer-padding')
     tkqr = (By.CSS_SELECTOR,'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-btn.layui-layer-btn- a.layui-layer-btn0')
 
     #1、初始化创建罪犯
@@ -625,7 +625,8 @@ class Cyed1xfedPage(BasePage):
         self.find_element(*self.qrjz).click()
 
     def gett_tknr(self):
-        self.find_element(*self.tkdw).get_attribute('textContent')
+        self.b = self.find_element(*self.tknr).get_attribute('textContent')
+        return self.b
 
     def click_tkqr(self):
         self.find_element(*self.tkqr).click()
