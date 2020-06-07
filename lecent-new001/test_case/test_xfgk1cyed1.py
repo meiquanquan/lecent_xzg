@@ -32,7 +32,7 @@ class TestCyed(unittest.TestCase):
         mark1 += 1
         self.driver.refresh()
 
-    def testcase1(self):
+    def testcase11(self):
         '''用例1，处遇额度-A账户额度限制-（A商品+A商品）大于A账户限制金额=消费失败'''
         self.dl.input_name(data1[mark1][0])
         time.sleep(2)
@@ -53,7 +53,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -65,11 +65,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -77,6 +77,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
+
 
         '''略
         #2、初始化罪犯资金下账
@@ -185,6 +186,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
+
         # ------【一级处遇等级{高}】
         #self.cyed1.click_ze1xz()
         #self.cyed1.input_zed1(data2[mark1][10])
@@ -194,13 +198,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         #self.cyed1.click_b1xz()
         #self.cyed1.input_b1(data2[mark1][12])
-        # -----【二级处遇等级{底}】
-        #self.cyed1.click_ze2xz()
-        #self.cyed1.input_zed2()
-        #self.cyed1.click_a2xz()
-        #self.cyed1.input_a2()
-        #self.cyed1.click_b2xz()
-        #self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -214,9 +212,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -280,9 +278,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -300,7 +298,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -322,7 +320,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -344,7 +342,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -352,10 +350,16 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        print(self.b)
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase2(self):
+    def testcase12(self):
         '''用例2，处遇额度-A账户额度限制-（A商品+A商品）等于A账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -369,7 +373,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -381,11 +385,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -446,7 +450,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
 
         # ====ok
-        # 3、初始化修改关联处遇额度
+        # 4、初始化修改关联处遇额度
         self.cyed1.click_zfxfgk()
         time.sleep(2)
         self.cyed1.click_cyed()
@@ -459,6 +463,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
+
         # ------【一级处遇等级{高}】
         # self.cyed1.click_ze1xz()
         # self.cyed1.input_zed1(data2[mark1][10])
@@ -468,13 +475,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         # self.cyed1.click_b1xz()
         # self.cyed1.input_b1(data2[mark1][12])
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -488,9 +489,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -554,9 +555,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -574,7 +575,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -596,7 +597,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -618,7 +619,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -626,10 +627,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase3(self):
+    def testcase13(self):
         '''用例3，处遇额度-A账户额度限制-（A商品+A商品）小于A账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -643,7 +649,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -655,11 +661,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -720,7 +726,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
 
         # ====ok
-        # 3、初始化修改关联处遇额度
+        # 4、初始化修改关联处遇额度
         self.cyed1.click_zfxfgk()
         time.sleep(2)
         self.cyed1.click_cyed()
@@ -733,6 +739,8 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
         # ------【一级处遇等级{高}】
         # self.cyed1.click_ze1xz()
         # self.cyed1.input_zed1(data2[mark1][10])
@@ -742,13 +750,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         # self.cyed1.click_b1xz()
         # self.cyed1.input_b1(data2[mark1][12])
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -762,9 +764,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -828,9 +830,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -848,7 +850,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -870,7 +872,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -892,7 +894,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -900,10 +902,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase4(self):
+    def testcase14(self):
         '''用例4，处遇额度-B账户额度限制-（B商品+B商品）大于B账户限制金额=消费失败'''
         # ====ok
         # 1、初始化创建罪犯
@@ -917,7 +924,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -929,11 +936,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -966,7 +973,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -994,7 +1001,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
 
         # ====ok
-        # 3、初始化修改关联处遇额度
+        # 4、初始化修改关联处遇额度
         self.cyed1.click_zfxfgk()
         time.sleep(2)
         self.cyed1.click_cyed()
@@ -1007,24 +1014,20 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
         # ------【一级处遇等级{高}】
         # self.cyed1.click_ze1xz()
         # self.cyed1.input_zed1(data2[mark1][10])
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
         self.cyed1.click_b1xz()
         time.sleep(2)
         self.cyed1.input_b1(data2[mark1][12])
         time.sleep(2)
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -1038,9 +1041,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1104,9 +1107,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1120,11 +1123,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -1142,11 +1145,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -1164,11 +1167,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -1176,10 +1179,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase5(self):
+    def testcase15(self):
         '''用例5，处遇额度-B账户额度限制-（B商品+B商品）等于B账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -1193,7 +1201,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -1205,11 +1213,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -1242,7 +1250,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -1270,7 +1278,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
 
         # ====ok
-        # 3、初始化修改关联处遇额度
+        # 4、初始化修改关联处遇额度
         self.cyed1.click_zfxfgk()
         time.sleep(2)
         self.cyed1.click_cyed()
@@ -1283,24 +1291,20 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
         # ------【一级处遇等级{高}】
         # self.cyed1.click_ze1xz()
         # self.cyed1.input_zed1(data2[mark1][10])
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
         self.cyed1.click_b1xz()
         time.sleep(2)
         self.cyed1.input_b1(data2[mark1][12])
         time.sleep(2)
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -1314,9 +1318,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1380,9 +1384,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1396,11 +1400,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -1418,11 +1422,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -1440,11 +1444,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -1452,10 +1456,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase6(self):
+    def testcase16(self):
         '''用例6，处遇额度-B账户额度限制-（B商品+B商品）小于B账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -1469,7 +1478,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -1481,11 +1490,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -1518,7 +1527,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -1546,7 +1555,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
 
         # ====ok
-        # 3、初始化修改关联处遇额度
+        # 4、初始化修改关联处遇额度
         self.cyed1.click_zfxfgk()
         time.sleep(2)
         self.cyed1.click_cyed()
@@ -1559,24 +1568,20 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
         # ------【一级处遇等级{高}】
         # self.cyed1.click_ze1xz()
         # self.cyed1.input_zed1(data2[mark1][10])
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
         self.cyed1.click_b1xz()
         time.sleep(2)
         self.cyed1.input_b1(data2[mark1][12])
         time.sleep(2)
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -1590,9 +1595,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1656,9 +1661,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1672,11 +1677,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -1694,11 +1699,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -1716,11 +1721,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.switch_gyzxs()
         time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][1])
+        self.cyed1.input_gyzzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -1728,10 +1733,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase7(self):
+    def testcase17(self):
         '''用例7，处遇额度-总账户额度限制-（A商品+B商品）大于总账户限制金额=消费失败'''
         # ====ok
         # 1、初始化创建罪犯
@@ -1745,7 +1755,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -1757,11 +1767,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -1795,7 +1805,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -1845,7 +1855,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -1886,6 +1896,8 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
         # ------【一级处遇等级{高}】
         self.cyed1.click_ze1xz()
         time.sleep(2)
@@ -1899,13 +1911,7 @@ class TestCyed(unittest.TestCase):
         #time.sleep(2)
         #self.cyed1.input_b1(data2[mark1][12])
         #time.sleep(2)
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -1919,9 +1925,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1985,9 +1991,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2005,7 +2011,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -2027,7 +2033,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -2049,7 +2055,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -2057,10 +2063,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase8(self):
+    def testcase18(self):
         '''用例8，处遇额度-总账户额度限制-（A商品+B商品）等于总账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -2074,7 +2085,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -2086,11 +2097,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -2101,7 +2112,7 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        #A账户上账
+        # A账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -2124,7 +2135,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -2174,7 +2185,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -2215,26 +2226,22 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
         # ------【一级处遇等级{高}】
         self.cyed1.click_ze1xz()
         time.sleep(2)
         self.cyed1.input_zed1(data2[mark1][10])
         time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -2248,9 +2255,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2314,9 +2321,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2334,7 +2341,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -2356,7 +2363,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -2378,7 +2385,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -2386,10 +2393,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase9(self):
+    def testcase19(self):
         '''用例9，处遇额度-总账户额度限制-（A商品+B商品）小于总账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -2403,7 +2415,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -2415,11 +2427,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -2430,7 +2442,7 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        #A账户上账
+        # A账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -2453,7 +2465,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -2503,7 +2515,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -2544,26 +2556,22 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_b1bxz()
         time.sleep(2)
+        self.cyed1.click_gwcsbxz()
+        time.sleep(2)
         # ------【一级处遇等级{高}】
         self.cyed1.click_ze1xz()
         time.sleep(2)
         self.cyed1.input_zed1(data2[mark1][10])
         time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -2577,9 +2585,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2643,9 +2651,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2663,7 +2671,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -2685,7 +2693,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -2707,7 +2715,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -2715,10 +2723,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase10(self):
+    def testcase20(self):
         '''用例10，处遇额度-消费次数限制-A商品购买次数大于限制次数=消费失败【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -2732,7 +2745,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -2744,11 +2757,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -2759,7 +2772,7 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        #A账户上账
+        # A账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -2782,7 +2795,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -2826,30 +2839,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -2863,9 +2870,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2929,9 +2936,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2949,7 +2956,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -2971,7 +2978,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -2993,7 +3000,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -3001,10 +3008,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase11(self):
+    def testcase21(self):
         '''用例11，处遇额度-消费次数限制-A商品购买次数等于限制次数=消费成功【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -3018,7 +3030,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -3030,11 +3042,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -3045,7 +3057,7 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        #A账户上账
+        # A账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -3068,7 +3080,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -3112,30 +3124,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -3149,9 +3155,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3215,9 +3221,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3235,7 +3241,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -3257,7 +3263,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -3279,7 +3285,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -3287,11 +3293,16 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
 
-    def testcase12(self):
+    def testcase22(self):
         '''用例12，处遇额度-消费次数限制-A商品购买次数小于限制次数=消费成功【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -3305,7 +3316,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -3317,11 +3328,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -3332,7 +3343,7 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        #A账户上账
+        # A账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -3355,7 +3366,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -3399,30 +3410,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -3436,9 +3441,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3502,9 +3507,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3522,7 +3527,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -3544,7 +3549,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -3566,7 +3571,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -3574,10 +3579,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase13(self):
+    def testcase23(self):
         '''用例13，处遇额度-消费次数限制-B商品购买次数大于限制次数=消费失败【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -3591,7 +3601,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -3603,11 +3613,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -3618,8 +3628,6 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-
-        # B账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -3642,7 +3650,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -3686,30 +3694,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -3723,9 +3725,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3789,9 +3791,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3809,7 +3811,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -3831,7 +3833,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -3853,7 +3855,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -3861,10 +3863,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase14(self):
+    def testcase24(self):
         '''用例14，处遇额度-消费次数限制-B商品购买次数等于限制次数=消费成功【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -3878,7 +3885,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -3890,11 +3897,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -3905,8 +3912,6 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-
-        # B账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -3929,7 +3934,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -3973,30 +3978,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -4010,9 +4009,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4076,9 +4075,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4096,7 +4095,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -4118,7 +4117,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -4140,7 +4139,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -4148,10 +4147,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase15(self):
+    def testcase25(self):
         '''用例15，处遇额度-消费次数限制-B商品购买次数小于限制次数=消费成功【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -4165,7 +4169,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -4177,11 +4181,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -4192,7 +4196,6 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        # B账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -4215,7 +4218,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -4259,30 +4262,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -4296,9 +4293,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4362,9 +4359,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4382,7 +4379,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -4404,7 +4401,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -4426,7 +4423,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -4434,10 +4431,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase16(self):
+    def testcase26(self):
         '''用例16，处遇额度-消费次数限制-（A商品+B商品）购买次数大于限制次数=消费失败【限3，小2，等3，大4】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -4451,7 +4453,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -4463,11 +4465,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -4478,7 +4480,7 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        #A账户上账
+        # A账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -4501,7 +4503,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -4551,7 +4553,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -4595,30 +4597,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -4632,9 +4628,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4698,9 +4694,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4718,7 +4714,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -4740,7 +4736,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -4762,7 +4758,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -4770,10 +4766,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase17(self):
+    def testcase27(self):
         '''用例17，处遇额度-消费次数限制-（A商品+B商品）购买次数等于限制次数=消费成功【限3，小2，等3，大4】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -4787,7 +4788,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -4799,11 +4800,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -4814,7 +4815,7 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        #A账户上账
+        # A账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -4837,7 +4838,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -4887,7 +4888,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -4931,30 +4932,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -4968,9 +4963,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5034,9 +5029,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5054,7 +5049,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -5076,7 +5071,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -5098,7 +5093,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -5106,10 +5101,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase18(self):
+    def testcase28(self):
         '''用例18，处遇额度-消费次数限制-（A商品+B商品）购买次数小于限制次数=消费成功【限2，小2，等3，大4】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -5123,7 +5123,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ssjq()
         time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][27])
+        self.cyed1.input_ssjq(data2[mark1][24])
         time.sleep(2)
         self.cyed1.input_zfxm(data2[mark1][1])
         time.sleep(2)
@@ -5135,11 +5135,11 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_cydj()
         time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][28])
+        self.cyed1.input_cydj(data2[mark1][25])
         time.sleep(2)
         self.cyed1.click_srlb()
         time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][29])
+        self.cyed1.input_srlb(data2[mark1][26])
         time.sleep(2)
         self.cyed1.click_zflx()
         time.sleep(2)
@@ -5150,7 +5150,7 @@ class TestCyed(unittest.TestCase):
 
         # ===ok
         # 2、初始化罪犯资金上账
-        #A账户上账
+        # A账户上账
         self.cyed1.click_zjywgl()
         time.sleep(3)
         self.cyed1.click_zjsz()
@@ -5173,7 +5173,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][5])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][6])
         time.sleep(3)
@@ -5223,7 +5223,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.input_szzjlx(data2[mark1][8])
         time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][1])
+        self.cyed1.input_szzfxm(data2[mark1][2])
         time.sleep(3)
         self.cyed1.input_szje(data2[mark1][9])
         time.sleep(3)
@@ -5267,30 +5267,24 @@ class TestCyed(unittest.TestCase):
         self.cyed1.click_gwcsbxz()
         time.sleep(2)
         # ------【一级处遇等级{高}】
-        #self.cyed1.click_ze1xz()
-        #time.sleep(2)
-        #self.cyed1.input_zed1(data2[mark1][10])
-        #time.sleep(2)
-        #self.cyed1.click_a1xz()
-        #time.sleep(2)
-        #self.cyed1.input_a1(data2[mark1][11])
-        #time.sleep(2)
-        #self.cyed1.click_b1xz()
-        #time.sleep(2)
-        #self.cyed1.input_b1(data2[mark1][12])
-        #time.sleep(2)
+        # self.cyed1.click_ze1xz()
+        # time.sleep(2)
+        # self.cyed1.input_zed1(data2[mark1][10])
+        # time.sleep(2)
+        # self.cyed1.click_a1xz()
+        # time.sleep(2)
+        # self.cyed1.input_a1(data2[mark1][11])
+        # time.sleep(2)
+        # self.cyed1.click_b1xz()
+        # time.sleep(2)
+        # self.cyed1.input_b1(data2[mark1][12])
+        # time.sleep(2)
         self.cyed1.click_gwcs1xz()
         time.sleep(2)
         self.cyed1.input_gwcs1xz(data2[mark1][13])
         time.sleep(2)
 
-        # -----【二级处遇等级{底}】
-        # self.cyed1.click_ze2xz()
-        # self.cyed1.input_zed2()
-        # self.cyed1.click_a2xz()
-        # self.cyed1.input_a2()
-        # self.cyed1.click_b2xz()
-        # self.cyed1.input_b2()
+
         self.cyed1.click_cyedbc()
         time.sleep(2)
         self.driver.refresh()
@@ -5304,9 +5298,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_ck1zcck()  # 一关
+        time.sleep(3)
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5370,9 +5364,9 @@ class TestCyed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.switch_ckxxgl()
         time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
+        self.cyed1.click_ck1zcck()  # 二开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5390,7 +5384,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][15])
         time.sleep(3)
@@ -5412,7 +5406,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][18])
         time.sleep(3)
@@ -5434,7 +5428,7 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_cksrk()
         time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][26])
+        self.cyed1.input_cksrk(data2[mark1][23])
         time.sleep(3)
         self.cyed1.input_spbh(data2[mark1][21])
         time.sleep(3)
@@ -5442,8 +5436,15 @@ class TestCyed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
+            raise Exception
+
+
 
 if __name__=='__main__':
     unittest.main()

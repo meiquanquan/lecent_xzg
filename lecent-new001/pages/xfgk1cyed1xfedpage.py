@@ -79,22 +79,18 @@ class Cyed1xfedPage(BasePage):
     cyed_frame = (By.XPATH, '//*[@id="iframe0"]')
     '''对应处遇额度'''
     # 【一级处遇等级{高}】
-    ze1_bxz = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountTotal_NoLimit127"]')
     ze1_xz = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountTotal_Limit127"]')
     ze1_input = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountTotal_Input127"]')
     ze1bxz = (By.XPATH, '//*[@id="ControlTreatLevel_ListTable"]/tbody/tr[9]/td[2]/div/a[1]')
 
-    a1_bxz = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountA_NoLimit127"]')
     a1_xz = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountA_Limit127"]')
     a1_input = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountA_Input127"]')
     a1bxz = (By.XPATH, '//*[@id="ControlTreatLevel_ListTable"]/tbody/tr[9]/td[3]/div/a[1]')
 
-    b1_bxz = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountB_NoLimit127"]')
     b1_xz = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountB_Limit127"]')
     b1_input = (By.XPATH, '//*[@id="ControlTreatLevelSF_AmountB_Input127"]')
     b1bxz = (By.XPATH, '//*[@id="ControlTreatLevel_ListTable"]/tbody/tr[9]/td[4]/div/a[1]')
 
-    gwcs1_bxz = (By.XPATH, '//*[@id="ControlTreatLevelSF_ShoppingCount_NoLimit127"]')
     gwcs1_xz = (By.XPATH, '//*[@id="ControlTreatLevelSF_ShoppingCount_Limit127"]')
     gwcs1_input = (By.XPATH, '//*[@id="ControlTreatLevelSF_ShoppingCount_Input127"]')
     gwcs1bxz = (By.XPATH, '//*[@id="ControlTreatLevel_ListTable"]/tbody/tr[9]/td[5]/div/a[1]')
@@ -135,7 +131,7 @@ class Cyed1xfedPage(BasePage):
     ckxxgl_frame = (By.XPATH, '//*[@id="iframe0"]')
     ck1zcck = (By.XPATH, '//*[@id="GoodsWarehouse_ListTable"]/tbody/tr[2]/td[14]/a[4]')
     ck2zcck = (By.XPATH, '//*[@id="GoodsWarehouse_ListTable"]/tbody/tr[1]/td[14]/a[4]')
-    tkqr = (By.XPATH, '/html/body/div[3]/div[7]/button[2]')
+    cktkqr = (By.XPATH, '/html/body/div[3]/div[7]/button[2]')
     #在售商品一键调价
     xsywgl = (By.XPATH, '//*[@id="side-menu"]/li[4]/a/span[1]')
     zsspgl = (By.XPATH, '//*[@id="side-menu"]/li[4]/ul/li[1]/a')
@@ -181,8 +177,8 @@ class Cyed1xfedPage(BasePage):
     gyzxsjz = (By.XPATH, '//*[@id="GoodsOrderSaleForm_SubmitButton"]')
     qrjz = (By.XPATH, '//*[@id="Modal_SaleSettyle"]')
 
-    tknr = (By.CSS_SELECTOR, 'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-content.layui-layer-padding')
-    tkqr = (By.CSS_SELECTOR,'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-btn.layui-layer-btn- a.layui-layer-btn0')
+    gwtknr = (By.CSS_SELECTOR, 'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-content.layui-layer-padding')
+    gwtkqr = (By.CSS_SELECTOR,'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-btn.layui-layer-btn- a.layui-layer-btn0')
 
     #1、初始化创建罪犯
     def click_jcxxgl(self):
@@ -384,9 +380,6 @@ class Cyed1xfedPage(BasePage):
         self.find_element(*self.gwcs1bxz).click()
 
     # ------【一级处遇等级{高}】
-    def click_ze1bzx(self):
-        self.find_element(*self.ze1_bxz).click()
-
     def click_ze1xz(self):
         self.find_element(*self.ze1_xz).click()
 
@@ -394,18 +387,12 @@ class Cyed1xfedPage(BasePage):
         self.find_element(*self.ze1_input).send_keys(Keys.CONTROL, 'a')
         self.find_element(*self.ze1_input).send_keys(zed1)
 
-    def click_a1bzx(self):
-        self.find_element(*self.a1_bxz).click()
-
     def click_a1xz(self):
         self.find_element(*self.a1_xz).click()
 
     def input_a1(self, ad1):
         self.find_element(*self.a1_input).send_keys(Keys.CONTROL, 'a')
         self.find_element(*self.a1_input).send_keys(ad1)
-
-    def click_b1bzx(self):
-        self.find_element(*self.b1_bxz).click()
 
     def click_b1xz(self):
         self.find_element(*self.b1_xz).click()
@@ -512,8 +499,8 @@ class Cyed1xfedPage(BasePage):
     def click_ck2zcck(self):
         self.find_element(*self.ck2zcck).click()
 
-    def click_tkqr(self):
-        self.find_element(*self.tkqr).click()
+    def click_cktkqr(self):
+        self.find_element(*self.cktkqr).click()
 
     def click_xsywgl(self):
         self.find_element(*self.xsywgl).click()
@@ -624,12 +611,12 @@ class Cyed1xfedPage(BasePage):
     def click_qrjz(self):
         self.find_element(*self.qrjz).click()
 
-    def gett_tknr(self):
-        self.b = self.find_element(*self.tknr).get_attribute('textContent')
+    def gett_gwtknr(self):
+        self.b = self.find_element(*self.gwtknr).get_attribute('textContent')
         return self.b
 
-    def click_tkqr(self):
-        self.find_element(*self.tkqr).click()
+    def click_gwtkqr(self):
+        self.find_element(*self.gwtkqr).click()
         
 
 
