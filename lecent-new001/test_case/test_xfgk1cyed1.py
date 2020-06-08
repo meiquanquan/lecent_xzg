@@ -32,7 +32,7 @@ class TestCyed(unittest.TestCase):
         mark1 += 1
         self.driver.refresh()
 
-    def testcase11(self):
+    def testcase01(self):
         '''用例1，处遇额度-A账户额度限制-（A商品+A商品）大于A账户限制金额=消费失败'''
         self.dl.input_name(data1[mark1][0])
         time.sleep(2)
@@ -359,7 +359,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase12(self):
+    def testcase02(self):
         '''用例2，处遇额度-A账户额度限制-（A商品+A商品）等于A账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -635,7 +635,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase13(self):
+    def testcase03(self):
         '''用例3，处遇额度-A账户额度限制-（A商品+A商品）小于A账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -910,7 +910,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase14(self):
+    def testcase04(self):
         '''用例4，处遇额度-B账户额度限制-（B商品+B商品）大于B账户限制金额=消费失败'''
         # ====ok
         # 1、初始化创建罪犯
@@ -1187,7 +1187,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase15(self):
+    def testcase05(self):
         '''用例5，处遇额度-B账户额度限制-（B商品+B商品）等于B账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -1464,7 +1464,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase16(self):
+    def testcase06(self):
         '''用例6，处遇额度-B账户额度限制-（B商品+B商品）小于B账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -1741,7 +1741,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase17(self):
+    def testcase07(self):
         '''用例7，处遇额度-总账户额度限制-（A商品+B商品）大于总账户限制金额=消费失败'''
         # ====ok
         # 1、初始化创建罪犯
@@ -2071,7 +2071,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase18(self):
+    def testcase08(self):
         '''用例8，处遇额度-总账户额度限制-（A商品+B商品）等于总账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -2401,7 +2401,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase19(self):
+    def testcase09(self):
         '''用例9，处遇额度-总账户额度限制-（A商品+B商品）小于总账户限制金额=消费成功'''
         # ====ok
         # 1、初始化创建罪犯
@@ -2731,7 +2731,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase20(self):
+    def testcase10(self):
         '''用例10，处遇额度-消费次数限制-A商品购买次数大于限制次数=消费失败【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -3016,7 +3016,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase21(self):
+    def testcase11(self):
         '''用例11，处遇额度-消费次数限制-A商品购买次数等于限制次数=消费成功【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -3302,7 +3302,7 @@ class TestCyed(unittest.TestCase):
             raise Exception
 
 
-    def testcase22(self):
+    def testcase12(self):
         '''用例12，处遇额度-消费次数限制-A商品购买次数小于限制次数=消费成功【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -3587,7 +3587,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase23(self):
+    def testcase13(self):
         '''用例13，处遇额度-消费次数限制-B商品购买次数大于限制次数=消费失败【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -3871,7 +3871,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase24(self):
+    def testcase14(self):
         '''用例14，处遇额度-消费次数限制-B商品购买次数等于限制次数=消费成功【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -4155,7 +4155,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase25(self):
+    def testcase15(self):
         '''用例15，处遇额度-消费次数限制-B商品购买次数小于限制次数=消费成功【限2，小1，等2，大3】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -4439,7 +4439,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase26(self):
+    def testcase16(self):
         '''用例16，处遇额度-消费次数限制-（A商品+B商品）购买次数大于限制次数=消费失败【限3，小2，等3，大4】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -4774,7 +4774,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase27(self):
+    def testcase17(self):
         '''用例17，处遇额度-消费次数限制-（A商品+B商品）购买次数等于限制次数=消费成功【限3，小2，等3，大4】'''
         # ====ok
         # 1、初始化创建罪犯
@@ -5109,7 +5109,7 @@ class TestCyed(unittest.TestCase):
             self.cyed1.get_img(ut.IMG_PATH + '/处遇额度模块_%d.png' % (mark1))
             raise Exception
 
-    def testcase28(self):
+    def testcas18(self):
         '''用例18，处遇额度-消费次数限制-（A商品+B商品）购买次数小于限制次数=消费成功【限2，小2，等3，大4】'''
         # ====ok
         # 1、初始化创建罪犯
