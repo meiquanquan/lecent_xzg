@@ -39,7 +39,7 @@ class TestXfgz(unittest.TestCase):
         mark1 += 1
         self.driver.refresh()
 
-    def testcase1(self):
+    def testcase01(self):
         '''用例1，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【限制购买】限制金额-购买总额小于限制金额，商品购买成功'''
         self.dl.input_name(data1[mark1][0])
         time.sleep(2)
@@ -185,7 +185,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -242,7 +242,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -385,17 +385,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase2(self):
+    def testcase02(self):
         '''用例2，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【限制购买】限制金额-购买总额等于限制金额，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -534,7 +533,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -591,7 +590,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -732,17 +731,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase3(self):
+    def testcase03(self):
         '''用例3，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【限制购买】限制金额-购买总额大于限制金额，商品购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -881,7 +879,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -938,7 +936,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1079,17 +1077,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase4(self):
+    def testcase04(self):
         '''用例4，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【限制购买】限制数量-购买数量小于限制数量，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -1228,7 +1225,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1285,7 +1282,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1426,364 +1423,18 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
-
-    def testcase4(self):
-        '''用例4，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【限制购买】限制数量-购买数量小于限制数量，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
-
-        # ====ok
-        # 1、初始化创建罪犯
-        self.cyed1.click_jcxxgl()
-        time.sleep(2)
-        self.cyed1.click_zfxxgl()
-        time.sleep(2)
-        self.cyed1.switch_zftj()
-        time.sleep(2)
-        self.cyed1.click_zftj()
-        time.sleep(2)
-        self.cyed1.click_ssjq()
-        time.sleep(2)
-        self.cyed1.input_ssjq(data2[mark1][4])
-        time.sleep(2)
-        self.cyed1.input_zfxm(data2[mark1][1])
-        time.sleep(2)
-        self.cyed1.input_zfbh(data2[mark1][2])
-        time.sleep(2)
-        self.cyed1.click_zfxb()
-        time.sleep(2)
-        self.cyed1.input_zfxbsr(data2[mark1][3])
-        time.sleep(2)
-        self.cyed1.click_cydj()
-        time.sleep(3)
-        self.cyed1.input_cydj(data2[mark1][5])
-        time.sleep(2)
-        self.cyed1.click_srlb()
-        time.sleep(2)
-        self.cyed1.input_srlb(data2[mark1][6])
-        time.sleep(2)
-        self.cyed1.click_zflx()
-        time.sleep(2)
-        self.cyed1.click_bcnr()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
-
-        # ===ok
-        # 2、初始化罪犯资金上账
-        # A账户上账
-        self.cyed1.click_zjywgl()
-        time.sleep(3)
-        self.cyed1.click_zjsz()
-        time.sleep(3)
-        self.cyed1.switch_zjsz()
-        time.sleep(3)
-        self.cyed1.click_xzsz()
-        time.sleep(3)
         self.cyed1.switch_outframe()
-        time.sleep(3)
-        self.cyed1.click_zjszgb()
-        time.sleep(3)
-        self.cyed1.switch_zjsz()
-        time.sleep(4)
-        self.cyed1.click_szzjfl()
-        time.sleep(3)
-        self.cyed1.input_szzjfl(data2[mark1][7])
-        time.sleep(3)
-        self.cyed1.click_szzjlx()
-        time.sleep(3)
-        self.cyed1.input_szzjlx(data2[mark1][8])
-        time.sleep(3)
-        self.cyed1.input_szzfxm(data2[mark1][2])
-        time.sleep(3)
-        self.cyed1.input_szje(data2[mark1][9])
-        time.sleep(3)
-        self.cyed1.click_qbsz()
-        time.sleep(3)
-        self.cyed1.click_szxyb()
-        time.sleep(3)
-        self.cyed1.click_szxyb()
-        time.sleep(3)
-        self.cyed1.click_szgb()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
-        self.cyed1.click_zjywgl()
-        time.sleep(3)
-        self.cyed1.click_zjsz()
-        time.sleep(3)
-        self.cyed1.switch_zjsz()
-        time.sleep(3)
-        self.cyed1.click_tjsz()
-        time.sleep(2)
-        self.cyed1.click_qrsz()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
-        # ====ok
-        # 3、初始化修改关联处遇额度
-        self.cyed1.click_zfxfgk()
-        time.sleep(2)
-        self.cyed1.click_cyed()
-        time.sleep(2)
-        self.cyed1.switch_cyed()
-        time.sleep(2)
-        self.cyed1.click_ze1bxz()
-        time.sleep(2)
-        self.cyed1.click_a1bxz()
-        time.sleep(2)
-        self.cyed1.click_b1bxz()
-        time.sleep(2)
-        self.cyed1.click_gwcsbxz()
-        time.sleep(2)
-        # ------【一级处遇等级{高}】
-        # self.cyed1.click_ze1xz()
-        # time.sleep(2)
-        # self.cyed1.input_zed1(data2[mark1][10])
-        # time.sleep(2)
-        self.cyed1.click_a1xz()
-        time.sleep(2)
-        self.cyed1.input_a1(data2[mark1][11])
-        time.sleep(2)
-        # self.cyed1.click_b1xz()
-        # time.sleep(2)
-        # self.cyed1.input_b1(data2[mark1][12])
-        # time.sleep(2)
-        # self.cyed1.click_gwcs1xz()
-        # time.sleep(2)
-        # self.cyed1.input_gwcs1xz(data2[mark1][13])
-        # time.sleep(2)
-        self.cyed1.click_cyedbc()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
 
-        # ====ok
-        # 4、初始化指定商品类型改价【修改A-1、A-2】
-        self.cyed1.click_jcxxgl()
-        time.sleep(2)
-        self.cyed1.click_ckxxgl()
-        time.sleep(2)
-        self.cyed1.switch_ckxxgl()
-        time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 一开
-        time.sleep(2)
-        self.cyed1.click_tkqr()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
-        self.cyed1.click_xsywgl()
-        time.sleep(2)
-        self.cyed1.click_zsspgl()
-        time.sleep(2)
-        self.cyed1.switch_zsspgl()
-        time.sleep(4)
-        self.cyed1.click_spyjtj()
-        time.sleep(2)
-        self.cyed1.switch_outframe()
-        time.sleep(3)
-        self.cyed1.click_zsspgb()
-        time.sleep(2)
-        self.cyed1.switch_zsspgl()
-        time.sleep(2)
-        self.cyed1.click_xzsp()
-        time.sleep(3)
-        # 商品1
-        self.cyed1.input_spbhsrk(data2[mark1][19])
-        time.sleep(3)
-        self.cyed1.click_cpcx()
-        time.sleep(3)
-        self.cyed1.click_xzspgx()
-        time.sleep(2)
-        # 商品2
-        self.cyed1.input_spbhsrk(data2[mark1][23])
-        time.sleep(3)
-        self.cyed1.click_cpcx()
-        time.sleep(3)
-        self.cyed1.click_xzspgx()
-        time.sleep(2)
 
-        self.cyed1.click_gbspxz()
-        time.sleep(2)
-
-        # 商品一新临售
-        self.cyed1.input_sp1xls(data2[mark1][20])
-        time.sleep(2)
-        # 商品二新临售
-        self.cyed1.input_sp2xls(data2[mark1][24])
-        time.sleep(2)
-
-        self.cyed1.click_tjtj()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
-        self.cyed1.click_jcxxgl()
-        time.sleep(2)
-        self.cyed1.click_ckxxgl()
-        time.sleep(2)
-        self.cyed1.switch_ckxxgl()
-        time.sleep(2)
-        self.cyed1.click_ck1zcck()  # 二关
-        time.sleep(2)
-        self.cyed1.click_tkqr()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
-
-        # ===ok
-        # 5、供应站销售指定罪犯/指定商品/指定仓库（切） 均购买2两次
-        # 第一次购买商品
-        self.cyed1.click_xsywgl()
-        time.sleep(3)
-        self.cyed1.click_gyzxs()
-        time.sleep(3)
-        self.cyed1.switch_gyzxs()
-        time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][2])
-        time.sleep(3)
-        self.cyed1.click_cksrk()
-        time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][17])
-        time.sleep(3)
-        self.cyed1.input_spbh(data2[mark1][19])
-        time.sleep(3)
-        self.cyed1.input_spslsrk(data2[mark1][21])
-        time.sleep(2)
-        self.cyed1.click_spxsjz()
-        time.sleep(3)
-        self.cyed1.click_qrjz()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
-
-        # 6、设置指定罪犯/指定商品的消费规则
-        self.xfgz1.click_zfxfgk()
-        time.sleep(3)
-        self.xfgz1.click_xfgz()
-        time.sleep(3)
-        self.xfgz1.switch_xfgz()
-        time.sleep(2)
-        self.xfgz1.click_xfgztj()
-        time.sleep(3)
-        self.xfgz1.switch_outframe()
-        time.sleep(3)
-        self.xfgz1.click_xfgzgb()
-        time.sleep(3)
-        self.xfgz1.switch_xfgz()
-        time.sleep(3)
-        self.xfgz1.input_xfgzmc(data2[mark1][14])
-        time.sleep(3)
-        self.xfgz1.slelct_xfgzyxj(value01)
-        time.sleep(3)
-        self.xfgz1.click_xfgzdyyx()
-        time.sleep(3)
-        self.xfgz1.click_xfgztdzf()
-        time.sleep(3)
-        self.xfgz1.click_xzzf()
-        time.sleep(3)
-        self.xfgz1.input_xzzfbh(data2[mark1][2])
-        time.sleep(3)
-        self.xfgz1.click_cxzfan()
-        time.sleep(2)
-        self.xfgz1.click_zfxzgx()
-        time.sleep(3)
-        self.xfgz1.click_zfzxzgb()
-        time.sleep(3)
-        # 特定类别
-        self.xfgz1.click_tdlb()
-        time.sleep(3)
-        self.xfgz1.click_lbxz()
-        time.sleep(2)
-        self.xfgz1.click_qbxz()
-        time.sleep(3)
-        self.xfgz1.click_qrlb()
-        time.sleep(3)
-        '''
-        # 特定商品
-        self.xfgz1.click_tdsp()
-        time.sleep(3)
-        self.xfgz1.click_spxz()
-        time.sleep(3)
-        self.xfgz1.input_spbhsr(data2[mark1][19])
-        time.sleep(3)
-        self.xfgz1.click_cxspan()
-        time.sleep(2)
-        self.xfgz1.click_xzspgx()
-        time.sleep(2)
-        self.xfgz1.click_xzspgb()
-        time.sleep(3)
-        '''
-        # 限制购买
-        self.xfgz1.click_xfgzxzgw()
-        time.sleep(3)
-        # 禁止购买
-        # self.xfgz1.click_xfgzjzgw()
-        # time.sleep(2)
-        # 特许购买
-        # self.xfgz1.click_xfgztxgw()
-        # time.sleep(2)
-        # 只能购买
-        # self.xfgz1.click_xfgzzngm()
-        # time.sleep(2)
-        # 金额
-        self.xfgz1.click_xfgzbxzje()
-        time.sleep(2)
-        # self.xfgz1.click_xzgzxzje()
-        # time.sleep(2)
-        # self.xfgz1.input_xfgzxzje(data2[mark1][15])
-        # time.sleep(3)
-        # 数量
-        # self.xfgz1.click_xfgzbxzsl()
-        # time.sleep(2)
-        self.xfgz1.click_xfgzxzsl()
-        time.sleep(2)
-        self.xfgz1.input_xfgzxzsl(data2[mark1][16])
-        time.sleep(3)
-
-        self.xfgz1.click_xfgzbc()
-        time.sleep(3)
-        self.driver.refresh()
-        time.sleep(2)
-
-        # 第二次购买商品
-        self.cyed1.click_xsywgl()
-        time.sleep(3)
-        self.cyed1.click_gyzxs()
-        time.sleep(3)
-        self.cyed1.switch_gyzxs()
-        time.sleep(3)
-        self.cyed1.input_gyzzfxm(data2[mark1][2])
-        time.sleep(3)
-        self.cyed1.click_cksrk()
-        time.sleep(3)
-        self.cyed1.input_cksrk(data2[mark1][17])
-        time.sleep(3)
-        self.cyed1.input_spbh(data2[mark1][23])
-        time.sleep(3)
-        self.cyed1.input_spslsrk(data2[mark1][25])
-        time.sleep(2)
-        self.cyed1.click_spxsjz()
-        time.sleep(3)
-        self.cyed1.click_qrjz()
-        time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
-
-    def testcase5(self):
+    def testcase05(self):
         '''用例5，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【限制购买】限制数量-购买数量等于限制数量，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -1922,7 +1573,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1979,7 +1630,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2120,17 +1771,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase6(self):
+    def testcase06(self):
         '''用例6，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【限制购买】限制数量-购买数量大于限制数量，商品购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -2269,7 +1919,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2326,7 +1976,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2467,17 +2117,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase7(self):
+    def testcase07(self):
         '''用例7，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【只能购买】限制金额-指定罪犯购买[指定]，购买金额小于限制金额，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -2616,7 +2265,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2673,7 +2322,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2814,17 +2463,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase8(self):
+    def testcase08(self):
         '''用例8，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【只能购买】限制金额-指定罪犯购买[指定]，购买金额等于限制金额，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -2963,7 +2611,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3020,7 +2668,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3161,17 +2809,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase9(self):
+    def testcase09(self):
         '''用例9，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【只能购买】限制金额-指定罪犯购买[指定]，购买金额大于限制金额，商品购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -3310,7 +2957,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3367,7 +3014,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3508,17 +3155,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase10(self):
         '''用例10，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【只能购买】限制数量-指定罪犯购买[指定]，购买数量小于限制数量，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -3657,7 +3303,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3714,7 +3360,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3855,17 +3501,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase11(self):
         '''用例11，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【只能购买】限制数量-指定罪犯购买[指定]，购买数量等于限制数量，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -4004,7 +3649,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4061,7 +3706,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4202,17 +3847,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase12(self):
         '''用例12，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【只能购买】限制数量-指定罪犯购买[指定]，购买数量大于限制数量，商品购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -4351,7 +3995,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4408,7 +4052,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4549,17 +4193,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase13(self):
         '''用例13，消费规则-当月有效【无历史】-指定罪犯/指定商品-【特许购买】限制金额-指定罪犯购买[特许]，购买金额小于限制金额，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -4698,7 +4341,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4747,7 +4390,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4866,17 +4509,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase14(self):
         '''用例14，消费规则-当月有效【无历史】-指定罪犯/指定商品-【特许购买】限制金额-指定罪犯购买[特许]，购买金额等于限制金额，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -5015,7 +4657,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5064,7 +4706,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5183,17 +4825,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase15(self):
         '''用例15，消费规则-当月有效【无历史】-指定罪犯/指定商品-【特许购买】限制金额-指定罪犯购买[特许]，购买金额大于限制金额，商品购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -5332,7 +4973,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5381,7 +5022,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5500,17 +5141,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase16(self):
         '''用例16，消费规则-当月有效【无历史】-指定罪犯/指定商品-【特许购买】限制数量-指定罪犯购买[特许]，购买数量小于限制数量，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -5649,7 +5289,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5698,7 +5338,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5817,18 +5457,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase17(self):
         '''用例17，消费规则-当月有效【无历史】-指定罪犯/指定商品-【特许购买】限制数量-指定罪犯购买[特许]，购买数量等于限制数量，商品购买成功'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
-
         # ====ok
         # 1、初始化创建罪犯
         self.cyed1.click_jcxxgl()
@@ -5966,7 +5604,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6015,7 +5653,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6134,17 +5772,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase18(self):
         '''用例18，消费规则-当月有效【无历史】-指定罪犯/指定商品-【特许购买】限制数量-指定罪犯购买[特许]，购买数量大于限制数量，商品购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -6283,7 +5920,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6332,7 +5969,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6451,17 +6088,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase19(self):
         '''用例19，消费规则-当月有效【有历史记录】-指定罪犯/指定类别商品-【禁止购买】指定罪犯购买指定商品，指定商品设置为【禁止购买】，购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -6600,7 +6236,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6657,7 +6293,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6798,17 +6434,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase20(self):
         '''用例20，消费规则-当月有效【无历史】-指定罪犯/指定商品-【特许购买】限制金额-【非】指定罪犯购买[特许]，购买金额小于限制金额，商品购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯一
@@ -6985,7 +6620,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7034,7 +6669,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7153,17 +6788,16 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase21(self):
         '''用例21，消费规则-当月有效【无历史】-指定罪犯/指定商品-【只能购买】限制金额-指定罪犯购买[【非】指定]，购买金额小于限制金额，商品购买失败'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -7302,7 +6936,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7360,7 +6994,7 @@ class TestXfgz(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7479,8 +7113,14 @@ class TestXfgz(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费规则模块_%d.png' % (mark1))
+            raise Exception
+
 
 if __name__ == '__main__':
     unittest.main()
