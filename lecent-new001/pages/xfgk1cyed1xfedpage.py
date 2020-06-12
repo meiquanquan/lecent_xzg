@@ -127,7 +127,7 @@ class Cyed1xfedPage(BasePage):
     #############在售商品管理处进行修改##############################
     #仓库设置
     jcxxgl = (By.XPATH, '//*[@id="side-menu"]/li[2]/a')
-    ckxxgl = (By.XPATH, '//*[@id="side-menu"]/li[2]/ul/li[10]/a')
+    ckxxgl = (By.XPATH, '//*[@id="side-menu"]/li[2]/ul/li[9]/a')
     ckxxgl_frame = (By.XPATH, '//*[@id="iframe0"]')
     ck1zcck = (By.XPATH, '//*[@id="GoodsWarehouse_ListTable"]/tbody/tr[2]/td[14]/a[4]')
     ck2zcck = (By.XPATH, '//*[@id="GoodsWarehouse_ListTable"]/tbody/tr[1]/td[14]/a[4]')
@@ -177,8 +177,8 @@ class Cyed1xfedPage(BasePage):
     gyzxsjz = (By.XPATH, '//*[@id="GoodsOrderSaleForm_SubmitButton"]')
     qrjz = (By.XPATH, '//*[@id="Modal_SaleSettyle"]')
 
-    gwtknr = (By.CSS_SELECTOR, 'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-content.layui-layer-padding')
-    gwtkqr = (By.CSS_SELECTOR,'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer4.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-btn.layui-layer-btn- a.layui-layer-btn0')
+    gwtknr = (By.XPATH, '/html/body/div[6]/div[2]')
+    # gwtkqr = (By.CSS_SELECTOR,'html body.fixed-nav.fixed-sidebar.full-height-layout.gray-bg div#layui-layer9.layui-layer.layui-layer-dialog.layer-ext-moon div.layui-layer-btn.layui-layer-btn- a.layui-layer-btn0')
 
     #1、初始化创建罪犯
     def click_jcxxgl(self):

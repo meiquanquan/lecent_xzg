@@ -14,6 +14,7 @@ class JqxxPage(BasePage):
     jqbh = (By.ID, 'PrisonAreaWF_Code')
     xsrq = (By.XPATH, '//*[@id="PrisonAreaWF_Tab"]/li[2]/a')
     ygrq = (By.XPATH, '//*[@id="PrisonAreaWF_Tab_2"]/div/div[1]/button[1]')
+    scrq = (By.XPATH, '//*[@id="PrisonAreaWF_Tab_2"]/div/div[1]/button[2]')
     ygrqxz = (By.NAME, 'PrisonAreaWF_SaleDateAttr_IDS')
     ksrq = (By.NAME, 'PrisonArea_SaleDateAttr_StartDate[]')
     jzrq = (By.NAME, 'PrisonArea_SaleDateAttr_EndDate[]')
@@ -27,6 +28,10 @@ class JqxxPage(BasePage):
     jzsjqr = (By.XPATH, '//*[@id="layui-laydate2"]/div[2]/div/span[3]')
     bcnr = (By.ID, 'PrisonAreaWF_SubmitButton')
 
+    #修改
+    jqxxxg_a = (By.XPATH, '//*[@id="PrisonArea_ListTable"]/tbody/tr[2]/td[12]/a[2]')
+    jqxxxg_b = (By.XPATH, '//*[@id="PrisonArea_ListTable"]/tbody/tr[4]/td[12]/a[2]')
+
     def click_jcxxgl(self):
         self.find_element(*self.jcxxgl).click()
 
@@ -35,6 +40,9 @@ class JqxxPage(BasePage):
 
     def switch_jqtj(self):
         self.switch_frame(*self.jqtj_frame)
+
+    def switch_outframe(self):
+        self.switch_out()
 
     def click_jqtj(self):
         self.find_element(*self.jqtj).click()
@@ -69,9 +77,11 @@ class JqxxPage(BasePage):
         self.find_element(*self.ygrqxz).click()
 
     def input_ksrq(self, ksrqnumber):
+        self.find_element(*self.ksrq).send_keys(Keys.CONTROL ,'a')
         self.find_element(*self.ksrq).send_keys(ksrqnumber)
 
     def input_jzrq(self, jzrqnumber):
+        self.find_element(*self.jzrq).send_keys(Keys.CONTROL ,'a')
         self.find_element(*self.jzrq).send_keys(jzrqnumber)
 
     def click_xssj(self):
@@ -91,3 +101,12 @@ class JqxxPage(BasePage):
 
     def click_bcnr(self):
         self.find_element(*self.bcnr).click()
+
+    def click_jqxxxga(self):
+        self.find_element(*self.jqxxxg_a).click()
+
+    def click_jqxxxgb(self):
+        self.find_element(*self.jqxxxg_b).click()
+
+    def click_scrq(self):
+        self.find_element(*self.scrq).click()
