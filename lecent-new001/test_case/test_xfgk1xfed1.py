@@ -35,7 +35,7 @@ class TestXfed(unittest.TestCase):
         mark1 += 1
         self.driver.refresh()
 
-    def testcase1(self):
+    def testcase01(self):
         '''用例1，消费额度-当月有历史消费记录-金额/购物次数限制-总账户-（历史额度记录+A商品+B商品）大于总账户限制金额=消费失败【3个物品/购买3次/AAB】'''
         self.dl.input_name(data1[mark1][0])
         time.sleep(2)
@@ -231,7 +231,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -298,7 +298,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -445,17 +445,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase2(self):
+    def testcase02(self):
         '''用例2，消费额度-当月有历史消费记录-金额/购物次数限制-总账户-（历史额度记录+A商品+B商品）等于总账户限制金额=消费成功【3个物品/购买3次/AAB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -644,7 +643,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -711,7 +710,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -858,17 +857,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase3(self):
+    def testcase03(self):
         '''用例3，消费额度-当月有历史消费记录-金额/购物次数限制-总账户-（历史额度记录+A商品+B商品）小于总账户限制金额=消费成功【3个物品/购买3次/AAB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -1057,7 +1055,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1124,7 +1122,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1271,17 +1269,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase4(self):
+    def testcase04(self):
         '''用例4，消费额度-当月有历史消费记录-金额/购物次数限制-A账户-（历史额度记录+A商品+A商品）大于A账户限制金额=消费失败【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -1471,7 +1468,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1538,7 +1535,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1685,17 +1682,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase5(self):
+    def testcase05(self):
         '''用例5，消费额度-当月有历史消费记录-金额/购物次数限制-A账户-（历史额度记录+A商品+A商品）等于A账户限制金额=消费成功【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -1885,7 +1881,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -1952,7 +1948,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2099,17 +2095,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase6(self):
+    def testcase06(self):
         '''用例6，消费额度-当月有历史消费记录-金额/购物次数限制-A账户-（历史额度记录+A商品+A商品）小于A账户限制金额=消费成功【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -2300,7 +2295,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2367,7 +2362,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2514,17 +2509,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase7(self):
+    def testcase07(self):
         '''用例7，消费额度-当月有历史消费记录-金额/购物次数限制-B账户-（历史额度记录+B商品+B商品）大于B账户限制金额=消费失败【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -2715,7 +2709,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2782,7 +2776,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -2929,17 +2923,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase8(self):
+    def testcase08(self):
         '''用例8，消费额度-当月有历史消费记录-金额/购物次数限制-B账户-（历史额度记录+B商品+B商品）等于B账户限制金额=消费成功【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -3130,7 +3123,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3197,7 +3190,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3344,17 +3337,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
-    def testcase9(self):
+    def testcase09(self):
         '''用例9，消费额度-当月有历史消费记录-金额/购物次数限制-B账户-（历史额度记录+B商品+B商品）小于B账户限制金额=消费成功【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -3545,7 +3537,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3612,7 +3604,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -3759,17 +3751,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase10(self):
         '''用例10，消费额度-当月有历史消费记录-金额/购物次数限制-购物次数-（历史购物次数记录+A商品购物次数+B商品购物次数）大于设置购物次数=消费失败【2/前A一次/后B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -3960,7 +3951,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4027,7 +4018,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4174,17 +4165,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase11(self):
         '''用例11，消费额度-当月有历史消费记录-金额/购物次数限制-购物次数-（历史购物次数记录+A商品购物次数+B商品购物次数）等于设置购物次数=消费成功【3/前A一次/后B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -4375,7 +4365,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4442,7 +4432,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4589,17 +4579,17 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase12(self):
         '''用例12，消费额度-当月有历史消费记录-金额/购物次数限制-购物次数-（历史购物次数记录+A商品购物次数+B商品购物次数）小于设置购物次数=消费成功【4/前A一次/后B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
+
 
         # ====ok
         # 1、初始化创建罪犯
@@ -4790,7 +4780,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -4857,7 +4847,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5004,17 +4994,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase13(self):
         '''用例13，消费额度-当月有历史消费记录-金额/购物次数上浮-总账户-(历史额度记录+A商品+B商品)大于(原处遇额度总账户额度+上调部分额度)=消费失败【3个物品/购买3次/AAB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -5205,7 +5194,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5272,7 +5261,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5419,17 +5408,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase14(self):
         '''用例14，消费额度-当月有历史消费记录-金额/购物次数上浮-总账户-(历史额度记录+A商品+B商品)等于(原处遇额度总账户额度+上调部分额度)=消费成功【3个物品/购买3次/AAB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -5620,7 +5608,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5687,7 +5675,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -5834,17 +5822,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase15(self):
         '''用例15，消费额度-当月有历史消费记录-金额/购物次数上浮-总账户-(历史额度记录+A商品+B商品)小于(原处遇额度总账户额度+上调部分额度)=消费成功【3个物品/购买3次/AAB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -6035,7 +6022,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6102,7 +6089,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6249,17 +6236,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase16(self):
         '''用例16，消费额度-当月有历史消费记录-金额/购物次数上浮-A账户-(历史额度记录+A商品+A商品)大于(原处遇额度A账户额度+上调部分额度)=消费失败【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -6450,7 +6436,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6517,7 +6503,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6663,17 +6649,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase17(self):
         '''用例17，消费额度-当月有历史消费记录-金额/购物次数上浮-A账户-(历史额度记录+A商品+A商品)等于(原处遇额度A账户额度+上调部分额度)=消费成功【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -6864,7 +6849,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -6931,7 +6916,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7078,17 +7063,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase18(self):
         '''用例18，消费额度-当月有历史消费记录-金额/购物次数上浮-A账户-(历史额度记录+A商品+A商品)小于(原处遇额度A账户额度+上调部分额度)=消费成功【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -7279,7 +7263,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7346,7 +7330,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7493,17 +7477,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase19(self):
         '''用例19，消费额度-当月有历史消费记录-金额/购物次数上浮-B账户-(历史额度记录+B商品+B商品)大于(原处遇额度B账户额度+上调部分额度)=消费失败【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -7694,7 +7677,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7761,7 +7744,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -7908,17 +7891,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase20(self):
         '''用例20，消费额度-当月有历史消费记录-金额/购物次数上浮-B账户-(历史额度记录+B商品+B商品)等于(原处遇额度B账户额度+上调部分额度)=消费成功【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -8109,7 +8091,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -8176,7 +8158,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -8323,17 +8305,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase21(self):
         '''用例21，消费额度-当月有历史消费记录-金额/购物次数上浮-B账户-(历史额度记录+B商品+B商品)小于(原处遇额度B账户额度+上调部分额度)=消费成功【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -8524,7 +8505,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -8591,7 +8572,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -8738,17 +8719,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase22(self):
         '''用例22，消费额度-当月有历史消费记录-金额/购物次数上浮-购物次数-(历史购物次数记录+A商品购物次数+B商品购物次数)大于(原设置购物次数+上调次数)=消费失败【1+1/前A一次/后A、B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -8940,7 +8920,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -9007,7 +8987,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -9154,18 +9134,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase23(self):
         '''用例23，消费额度-当月有历史消费记录-金额/购物次数上浮-购物次数-(历史购物次数记录+A商品购物次数+B商品购物次数)等于(原设置购物次数+上调次数)=消费成功【1+2/前A一次/后A、B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
-
         # ====ok
         # 1、初始化创建罪犯
         self.cyed1.click_jcxxgl()
@@ -9356,7 +9334,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -9423,7 +9401,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -9570,17 +9548,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase24(self):
-        '''用例24，消费额度-当月有历史消费记录-金额/购物次数上浮-购物次数-(历史购物次数记录+A商品购物次数+B商品购物次数)小于(原设置购物次数+上调次数)=消费失败【1+3/前A一次/后A、B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
+        '''用例24，消费额度-当月有历史消费记录-金额/购物次数上浮-购物次数-(历史购物次数记录+A商品购物次数+B商品购物次数)小于(原设置购物次数+上调次数)=消费成功【1+3/前A一次/后A、B一次】'''
 
         # ====ok
         # 1、初始化创建罪犯
@@ -9772,7 +9749,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -9839,7 +9816,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -9986,17 +9963,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase25(self):
         '''用例25，消费额度-当月有历史消费记录-金额/购物次数下调-总账户-(历史额度记录+A商品+B商品)大于(原处遇额度总账户额度-下调部分额度)=消费失败【3个物品/购买3次/AAB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -10188,7 +10164,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -10255,7 +10231,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -10402,18 +10378,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase26(self):
         '''用例26，消费额度-当月有历史消费记录-金额/购物次数下调-总账户-(历史额度记录+A商品+B商品)等于(原处遇额度总账户额度-下调部分额度)=消费成功【3个物品/购买3次/AAB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
-
         # ====ok
         # 1、初始化创建罪犯
         self.cyed1.click_jcxxgl()
@@ -10604,7 +10578,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -10671,7 +10645,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -10818,18 +10792,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase27(self):
         '''用例27，消费额度-当月有历史消费记录-金额/购物次数下调-总账户-(历史额度记录+A商品+B商品)小于(原处遇额度总账户额度-下调部分额度)=消费成功【3个物品/购买3次/AAB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
-
         # ====ok
         # 1、初始化创建罪犯
         self.cyed1.click_jcxxgl()
@@ -11020,7 +10992,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -11087,7 +11059,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -11234,17 +11206,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase28(self):
         '''用例28，消费额度-当月有历史消费记录-金额/购物次数下调-A账户-(历史额度记录+A商品+A商品)大于(原处遇额度A账户额度-下调部分额度)=消费失败【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -11436,7 +11407,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -11503,7 +11474,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -11650,17 +11621,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase29(self):
         '''用例29，消费额度-当月有历史消费记录-金额/购物次数下调-A账户-(历史额度记录+A商品+A商品)等于(原处遇额度A账户额度-下调部分额度)=消费成功【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -11852,7 +11822,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -11919,7 +11889,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -12066,17 +12036,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase30(self):
         '''用例30，消费额度-当月有历史消费记录-金额/购物次数下调-A账户-(历史额度记录+A商品+A商品)小于(原处遇额度A账户额度-下调部分额度)=消费成功【3个物品/购买3次/AAA】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -12268,7 +12237,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -12335,7 +12304,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -12482,17 +12451,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase31(self):
         '''用例31，消费额度-当月有历史消费记录-金额/购物次数下调-B账户-(历史额度记录+B商品+B商品)大于(原处遇额度B账户额度-下调部分额度)=消费失败【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -12684,7 +12652,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -12751,7 +12719,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -12898,17 +12866,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase32(self):
         '''用例32，消费额度-当月有历史消费记录-金额/购物次数下调-B账户-(历史额度记录+B商品+B商品)等于(原处遇额度B账户额度-下调部分额度)=消费成功【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -13100,7 +13067,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -13167,7 +13134,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -13314,17 +13281,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase33(self):
         '''用例33，消费额度-当月有历史消费记录-金额/购物次数下调-B账户-(历史额度记录+B商品+B商品)小于(原处遇额度B账户额度-下调部分额度)=消费成功【3个物品/购买3次/BBB】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -13516,7 +13482,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -13583,7 +13549,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -13730,17 +13696,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase34(self):
         '''用例34，消费额度-当月有历史消费记录-金额/购物次数下调-购物次数-(历史购物次数记录+A商品购物次数+B商品购物次数)大于(原设置购物次数-下调次数)=消费失败【3-1/前A一次/后A、B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
 
         # ====ok
         # 1、初始化创建罪犯
@@ -13931,7 +13896,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -13998,7 +13963,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -14145,18 +14110,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('购买失败', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase35(self):
         '''用例35，消费额度-当月有历史消费记录-金额/购物次数下调-购物次数-(历史购物次数记录+A商品购物次数+B商品购物次数)等于(原设置购物次数-下调次数)=消费成功【4-1/前A一次/后A、B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
-
         # ====ok
         # 1、初始化创建罪犯
         self.cyed1.click_jcxxgl()
@@ -14346,7 +14309,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -14413,7 +14376,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -14560,18 +14523,16 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
     def testcase36(self):
-        '''用例36，消费额度-当月有历史消费记录-金额/购物次数下调-购物次数-(历史购物次数记录+A商品购物次数+B商品购物次数)小于(原设置购物次数-下调次数)=消费失败【5-1/前A一次/后A、B一次】'''
-        self.dl.input_name(data1[mark1][0])
-        time.sleep(2)
-        self.dl.input_pwd(data1[mark1][1])
-        time.sleep(3)
-        self.dl.click_login()
-        time.sleep(3)
-
+        '''用例36，消费额度-当月有历史消费记录-金额/购物次数下调-购物次数-(历史购物次数记录+A商品购物次数+B商品购物次数)小于(原设置购物次数-下调次数)=消费成功【5-1/前A一次/后A、B一次】'''
         # ====ok
         # 1、初始化创建罪犯
         self.cyed1.click_jcxxgl()
@@ -14761,7 +14722,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 一开
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -14828,7 +14789,7 @@ class TestXfed(unittest.TestCase):
         time.sleep(2)
         self.cyed1.click_ck1zcck()  # 二关
         time.sleep(2)
-        self.cyed1.click_tkqr()
+        self.cyed1.click_cktkqr()
         time.sleep(2)
         self.driver.refresh()
         time.sleep(2)
@@ -14975,8 +14936,13 @@ class TestXfed(unittest.TestCase):
         time.sleep(3)
         self.cyed1.click_qrjz()
         time.sleep(2)
-        self.driver.refresh()
-        time.sleep(2)
+        self.cyed1.switch_outframe()
+        self.b = self.cyed1.gett_gwtknr()
+        try:
+            self.assertIn('销售成功', self.b)
+        except:
+            self.cyed1.get_img(ut.IMG_PATH + '/消费额度模块_%d.png' % (mark1))
+            raise Exception
 
 if __name__ == '__main__':
     unittest.main()
