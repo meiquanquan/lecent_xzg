@@ -1,6 +1,6 @@
 import os,sys
 import csv
-sys.path.append('..') #('..')将当前目录sys.path.append添加至系统环境变量中方便调用，此修改方法为脚本运行时生效，脚本不运行时不生效
+sys.path.append('..')
 BASE_PATH=os.path.split(os.path.dirname(os.path.abspath(__file__)))[0]   #返回项目当前所在目录
 '''
 print(os.path.abspath(__file__))

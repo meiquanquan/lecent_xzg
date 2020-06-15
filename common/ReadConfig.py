@@ -6,5 +6,3 @@ def getbrowsername(name):
     cf.read(cfpath)
     browsername=cf.get('browser',name)
     return browsername
-print(getbrowsername('BrowserName'))
-print(getbrowsername('Web'))
